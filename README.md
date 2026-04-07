@@ -15,3 +15,7 @@ Curso 4: [Java Reflection: simplifique a conversão de objetos](https://cursos.a
 
 Esse curso em si não tem tanta questão de executar, já que o mesmo é mais para compreender sofre Java Reflection e seu funcionamento por trás dos panos nos frameworks. A pasta especifica é o curso-java-reflection.
 
+Curso 5: [NÃO TENHA MAIS DÚVIDAS - Stream, lambdas e interfaces funcionais.](https://www.youtube.com/watch?v=2oQXiY1Cskw)
+
+Como o curso da Alura de Streams e Lambda se apresenta desatulizado e não possível de realizar, em troca fiz o tutorial do vídeo acima.
+
