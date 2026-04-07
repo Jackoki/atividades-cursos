@@ -6,41 +6,72 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class Main {
-    //Resumidamente, Lambda é uma forma curta de escrever funções no Java transfromando a para uma função anonima
-    //Por exemplo        
-    //public void run() pode ser transformado para: () -> funcao_predefinida()
+    /* 
+    Resumidamente, Lambda é uma forma curta de escrever funções no Java transfromando a para uma função anonima
+    Por exemplo        
+    public void run() pode ser transformado para: () -> funcao_predefinida()
 
 
-    //Temos também a realização de interfaces funcionais, que são interfaces com apenas um método abstrato
-    //Podemos usar ele com o lambda:
-    //@FunctionalInterface
-    //public interface Calculadora {
-    //  int calcular(int a, int b); 
-    //}
+    Temos também a realização de interfaces funcionais, que são interfaces com apenas um método abstrato
+    Podemos usar ele com o lambda:
+    @FunctionalInterface
+    public interface Calculadora {
+        int calcular(int a, int b); 
+    }
 
-    //Calculadora soma = (a, b) -> a + b
-    //System.out.println(soma.calcular(2, 3))
+    Calculadora soma = (a, b) -> a + b
+    System.out.println(soma.calcular(2, 3))
 
 
-    //O Java tem de forma nativa algumas interfaces prontas, como Function, Consumer, Supplier e Predicate
-    //Function:
-    //Function<String, Integer> tamanho = s -> s.length() -----> O primeiro parametro é o que passamos e o segundo é o que a função retorna
-    //System.out.println(tamanho.apply("Gabriel")) -----> Vai retornar 7
+    O Java tem de forma nativa algumas interfaces prontas, como Function, Consumer, Supplier e Predicate
+    Function:
+    Function<String, Integer> tamanho = s -> s.length() -----> O primeiro parametro é o que passamos e o segundo é o que a função retorna
+    System.out.println(tamanho.apply("Gabriel")) -----> Vai retornar 7
 
         
-    //Consumer:
-    //Consumer<String> imprimir = s -> System.out.println(s) -----> Interface que só consome
-    //imprimir.accept("Hello World")
+    Consumer:
+    Consumer<String> imprimir = s -> System.out.println(s) -----> Interface que só consome
+    imprimir.accept("Hello World")
         
 
-    //Supplier:
-    //Supplier<Double> aleatorio = () -> Math.random() -----> Interface que só retorna
-    //System.out.println(aleatorio.get())
+    Supplier:
+    Supplier<Double> aleatorio = () -> Math.random() -----> Interface que só retorna
+    System.out.println(aleatorio.get())
 
     
-    //Predicate:
-    //Predicate<Integer> par = n -> n % 2 == 0 -----> Interface que retorna booleano
-    //System.out.println(par.test(4)) -----> Vai retornar true
+    Predicate:
+    Predicate<Integer> par = n -> n % 2 == 0 -----> Interface que retorna booleano
+    System.out.println(par.test(4)) -----> Vai retornar true
+
+    
+    Já sobre Streams, ele é uma forma de processar coleções de forma funcional, não precisando utilizar estruturas de repetições
+    Por exemplo, imagine que você queira imprimir todos os nomes de uma lista:
+    for(String nome : nomes) 
+
+    Podemos encurtar usando streams para:
+    nomes.stream().forEach(System.out::println)
+
+    Exemplo de funções que utilizam streams:
+
+    List<Integer> numeros = List.of(1, 2, 3, 4, 5);
+
+    List<Integer> pares = numeros.stream() 
+        .filter(n -> n % 2 == 0) //filtra informações
+        .map(n -> n * 2) //transforma
+        .toList();  //executa
+
+    System.out.println(pares); // [4, 8]
+
+
+    No caso, utilizamos tudo isso que foi mostrado por diversos motivos, como:
+    -Deixar o código mais limpo
+    -Menor erro devido a menos declarações
+    -Melhor manutenção
+    -Possível melhor perfomance
+    -Integrações com Java moderno
+
+    No entanto, é importante lembrar que nem sempre ele é a melhor opção caso seja necessário realizar diversos streams
+    */
 
     public static void main(String[] args) {
         List<UsuarioRequestDto> usuariosRequest = usuariosRequest();
