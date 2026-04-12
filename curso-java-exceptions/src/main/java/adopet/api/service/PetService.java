@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -23,7 +23,8 @@ public class PetService {
     public List<PetDTO> listarTodos(){
         return repository.findAll().stream().map(PetDTO::new).toList();
     }
-    public void cadastrar(CadastroPetDTO dto, MultipartFile imagem){
+
+    public void cadastrar(CadastroPetDTO dto, MultipartFile imagem) throws IOException {
 
         String nomeImagem = imagemService.upload(imagem);
 

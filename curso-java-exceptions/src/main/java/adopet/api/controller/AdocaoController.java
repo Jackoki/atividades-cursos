@@ -4,6 +4,7 @@ import adopet.api.dto.AdocaoDTO;
 import adopet.api.dto.AprovarAdocaoDTO;
 import adopet.api.dto.ReprovarAdocaoDTO;
 import adopet.api.dto.SolicitacaoDeAdocaoDTO;
+import adopet.api.exception.AdocaoException;
 import adopet.api.service.AdocaoService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
@@ -38,6 +39,7 @@ public class AdocaoController {
     @Transactional
     public ResponseEntity<String> solicitar(@RequestBody @Valid SolicitacaoDeAdocaoDTO dados){
         this.service.solicitar(dados);
+
         return ResponseEntity.ok("Adoção solicitada com sucesso!");
     }
 
