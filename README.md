@@ -24,4 +24,11 @@ Como o curso da Alura de Streams e Lambda se apresenta desatulizado e não poss�
 
 
 Curso 6: [Java exceções: aprenda a criar, lançar e controlar exceções](https://cursos.alura.com.br/course/java-excecoes-aprenda-criar-lancar-controlar-excecoes)
+
 Como executar: Abra a pasta "curso-java-exceptions" e configure o arquivo application.properties para as informações do MySQL, então no terminal faça o comando `mvn clean install` e execute o arquivo ApiApplication.java.
+
+
+Curso 7: [Python: crie a sua primeira aplicação](https://cursos.alura.com.br/course/python-crie-sua-primeira-aplicacao)
+
+É necessário ter o Python instalado na máquina, podendo ser instalada no seguinte link: https://www.python.org/
+Abra a pasta "curso-python-primeira-aplicacao" e então na pasta "sabor-express" rode no terminal o comando `python app.py`.
