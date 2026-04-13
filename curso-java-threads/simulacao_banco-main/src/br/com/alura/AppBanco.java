@@ -9,8 +9,22 @@ public class AppBanco {
         
         var operacao = new OperacaoSaque(conta, new BigDecimal("150"));
 
-        operacao.executa();
+        Thread saqueJoao = new Thread(operacao);
+        Thread saqueMaria = new Thread(operacao);
 
-        operacao.executa();
+        saqueJoao.start();
+        saqueMaria.start();
+
+        
+        try {
+            //Declara a sincronização entre as funções das threads com a função atual do main
+            //Faz com que a execução espere até que essa thread termine para continuar
+            saqueJoao.join();
+            saqueMaria.join();
+        }
+
+        catch(InterruptedException e){
+            throw new RuntimeException(e);
+        }
     }
 }

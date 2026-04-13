@@ -2,7 +2,8 @@ package src.br.com.alura;
 
 import java.math.BigDecimal;
 
-public class OperacaoSaque {
+//Implements Runnable faz com que a classe permita realizar execuções paralelas por threads
+public class OperacaoSaque implements Runnable {
 
     private Conta conta;
     private BigDecimal valor;
@@ -12,7 +13,8 @@ public class OperacaoSaque {
         this.valor = valor;
     }
 
-    public void executa() {
+    //Synchronized declara a sincronização das threads, bloqueando que nenhuma outra thread execute até terminar a thread atual
+    public synchronized void executa() {
         System.out.println("Iniciando operação de saque.");
         var saldoAtual = conta.getSaldo();
 
@@ -22,5 +24,11 @@ public class OperacaoSaque {
             System.out.println("Saldo atual: " +conta.getSaldo());
         }
         System.out.println("Finalizando operação de saque.");
+    }
+
+    @Override
+    public void run() {
+        executa();
+        System.out.println(Thread.currentThread().getName());
     }
 }
