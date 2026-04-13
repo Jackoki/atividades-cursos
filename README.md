@@ -32,3 +32,11 @@ Curso 7: [Python: crie a sua primeira aplicação](https://cursos.alura.com.br/c
 
 É necessário ter o Python instalado na máquina, podendo ser instalada no seguinte link: https://www.python.org/
 Abra a pasta "curso-python-primeira-aplicacao" e então na pasta "sabor-express" rode no terminal o comando `python app.py`.
+
+Curso 8: [Java exceções: aprenda a criar, lançar e controlar exceções](https://cursos.alura.com.br/course/java-excecoes-aprenda-criar-lancar-controlar-excecoes)
+
+Como executar: Abra a pasta "curso-java-exceptions" e configure o arquivo application.properties para as informações do MySQL, então no terminal faça o comando `mvn clean install` e execute o arquivo ApiApplication.java.
+
+Curso 9: [Java threads: aprenda a criar, gerenciar e aplicar com o Spring](https://cursos.alura.com.br/course/java-threads-criar-gerenciar-aplicar-spring)
+
+Como executar: Abra a pasta "curso-java-threads" então no terminal faça o comando `mvn clean install` e execute o arquivo AppBanco.java.
