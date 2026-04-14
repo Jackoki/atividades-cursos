@@ -40,3 +40,4 @@ Como executar: Abra a pasta "curso-java-exceptions" e configure o arquivo applic
 Curso 9: [Java threads: aprenda a criar, gerenciar e aplicar com o Spring](https://cursos.alura.com.br/course/java-threads-criar-gerenciar-aplicar-spring)
 
 Como executar: Abra a pasta "curso-java-threads" então no terminal faça o comando `mvn clean install` e execute o arquivo AppBanco.java.
+Como executar: Abra a pasta "adopet-store-main" e configure o arquivo application.properties, após isso, no terminal faça o comando `mvn clean install` e execute o arquivo AdopetStoreApplication.java.
