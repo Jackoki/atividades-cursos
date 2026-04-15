@@ -1,0 +1,1 @@
+ALTER TABLE estoques ADD COLUMN versao INT NOT NULL default 0

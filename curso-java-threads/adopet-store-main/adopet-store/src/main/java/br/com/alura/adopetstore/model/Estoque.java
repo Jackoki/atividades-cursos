@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 
 import java.util.Objects;
 
@@ -19,6 +20,9 @@ public class Estoque {
     private Integer quantidade;
     @OneToOne
     private Produto produto;
+
+    @Version
+    private Integer versao;
 
     public Estoque(){}
 
@@ -38,6 +42,11 @@ public class Estoque {
     public Produto getProduto() {
         return produto;
     }
+
+    public Integer getVersao() {
+        return versao;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
