@@ -3,6 +3,9 @@ package br.com.alura.adopetstore.controller;
 import br.com.alura.adopetstore.dto.RelatorioEstoque;
 import br.com.alura.adopetstore.dto.RelatorioFaturamento;
 import br.com.alura.adopetstore.service.RelatorioService;
+
+import java.util.concurrent.CompletableFuture;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,13 +19,13 @@ public class RelatorioController {
     private RelatorioService service;
 
     @GetMapping("estoque")
-    public ResponseEntity<RelatorioEstoque> obterInfoEstoque(){
+    public ResponseEntity<CompletableFuture<RelatorioEstoque>> obterInfoEstoque(){
         var relatorio = service.infoEstoque();
         return ResponseEntity.ok(relatorio);
     }
 
     @GetMapping("faturamento")
-    public ResponseEntity<RelatorioFaturamento> obterInfoFaturamento(){
+    public ResponseEntity<CompletableFuture<RelatorioFaturamento>> obterInfoFaturamento(){
         var relatorio = service.faturamentoObtido();
         return ResponseEntity.ok(relatorio);
     }
