@@ -40,4 +40,9 @@ Como executar: Abra a pasta "curso-java-exceptions" e configure o arquivo applic
 Curso 9: [Java threads: aprenda a criar, gerenciar e aplicar com o Spring](https://cursos.alura.com.br/course/java-threads-criar-gerenciar-aplicar-spring)
 
 Como executar: Abra a pasta "curso-java-threads" então no terminal faça o comando `mvn clean install` e execute o arquivo AppBanco.java.
-Como executar: Abra a pasta "adopet-store-main" e configure o arquivo application.properties, após isso, no terminal faça o comando `mvn clean install` e execute o arquivo AdopetStoreApplication.java.
+Abra a pasta "adopet-store-main" e configure o arquivo application.properties, após isso, no terminal faça o comando `mvn clean install` e execute o arquivo AdopetStoreApplication.java.
+
+Curso 10: [HTTP: entendendo a web por baixo dos panos](https://cursos.alura.com.br/course/http-entendendo-web-por-baixo-dos-panos)
+
+Como executar: Abra a pasta "curso-entendendo-http" e a pasta "api-alurabooks" e então no terminal faça o comando `npm install` e então `npm run start-auth`, que vai devolver a aplicação local da API.
+Abra a pasta "curso-react-alurabooks" e faça o comando `npm install` e depois o comando `npm start`, que vai devolver a aplicação local do front-end.
