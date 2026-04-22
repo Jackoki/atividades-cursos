@@ -46,3 +46,7 @@ Curso 10: [HTTP: entendendo a web por baixo dos panos](https://cursos.alura.com.
 
 Como executar: Abra a pasta "curso-entendendo-http" e a pasta "api-alurabooks" e então no terminal faça o comando `npm install` e então `npm run start-auth`, que vai devolver a aplicação local da API.
 Abra a pasta "curso-react-alurabooks" e faça o comando `npm install` e depois o comando `npm start`, que vai devolver a aplicação local do front-end.
+
+Curso 11: [C#: aplique boas práticas de refatoração e torne seu código mais legível](https://cursos.alura.com.br/course/csharp-boas-praticas-refatoracao-codigo-legivel)
+
+Como executar: Abra a pasta "curso-c#-boas-praticas" e na pasta "Alura.Adopet.API" e "Alura.Adopet.Console" e então no terminal faça o comando `dotnet run` que executará a API e disponibilizará a informação da porta para executar no navegador.
