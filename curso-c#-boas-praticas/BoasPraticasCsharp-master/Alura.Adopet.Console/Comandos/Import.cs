@@ -5,18 +5,26 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Alura.Adopet.Console.Modelos;
+using Alura.Adopet.Console.Util;
 
-namespace Alura.Adopet.Console
+namespace Alura.Adopet.Console.Comandos
 {
     [DocComando(instrucao:"import", documentacao: "adopet import < ARQUIVO > comando que realiza a importação do arquivo de pets.")]
-    internal class Import
+    internal class Import:IComando
     {
         HttpClient client;
+
+        public async Task ExecutarAsync(string[] args)
+        {
+            await this.ImportacaoArquivoPetAsync(caminhoDoArquivoDeImportacao: args[1]);
+        }
+
         public Import()
         {
-            this.client = ConfiguraHttpClient("http://localhost:5057");
+            client = ConfiguraHttpClient("http://localhost:5057");
         }
-        public async Task ImportacaoArquivoPetAsync(string caminhoDoArquivoDeImportacao)
+        private async Task ImportacaoArquivoPetAsync(string caminhoDoArquivoDeImportacao)
         {
 
             var leitor = new LeitorDeArquivo();
@@ -54,5 +62,7 @@ namespace Alura.Adopet.Console
             _client.BaseAddress = new Uri(url);
             return _client;
         }
+
+
     }
 }
