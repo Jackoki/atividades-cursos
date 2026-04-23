@@ -8,36 +8,20 @@ using System.Threading.Tasks;
 
 namespace Alura.Adopet.Console
 {
+    [DocComando(instrucao:"import", documentacao: "adopet import < ARQUIVO > comando que realiza a importação do arquivo de pets.")]
     internal class Import
     {
         HttpClient client;
-
         public Import()
         {
-            ConfiguraHttpClient("http://localhost:5057");
+            this.client = ConfiguraHttpClient("http://localhost:5057");
         }
-
-
         public async Task ImportacaoArquivoPetAsync(string caminhoDoArquivoDeImportacao)
         {
-            List<Pet> listaDePet = new List<Pet>();
 
-            using (StreamReader sr = new StreamReader(caminhoDoArquivoDeImportacao))
-            {
-                while (!sr.EndOfStream)
-                {
-                    // separa linha usando ponto e vírgula
-                    string[] propriedades = sr.ReadLine().Split(';');
-                    // cria objeto Pet a partir da separação
-                    Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                      propriedades[1],
-                      TipoPet.Cachorro
-                     );
+            var leitor = new LeitorDeArquivo();
+            List<Pet> listaDePet = leitor.RealizaLeitura(caminhoDoArquivoDeImportacao);
 
-                    System.Console.WriteLine(pet);
-                    listaDePet.Add(pet);
-                }
-            }
             foreach (var pet in listaDePet)
             {
                 try
@@ -60,6 +44,7 @@ namespace Alura.Adopet.Console
                 return client.PostAsJsonAsync("pet/add", pet);
             }
         }
+
         HttpClient ConfiguraHttpClient(string url)
         {
             HttpClient _client = new HttpClient();
